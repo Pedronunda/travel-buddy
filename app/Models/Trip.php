@@ -17,4 +17,8 @@ class Trip extends Model
     {
         return $this->hasMany(Comment::class);
     }
+    public function collaborators()
+    {
+    return $this->belongsToMany(User::class);
+    }
 }
