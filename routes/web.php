@@ -29,3 +29,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+use App\Http\Controllers\TripController;
+Route::middleware(['auth'])->group(function () {
+    Route::resource('trips', TripController::class);
+});
